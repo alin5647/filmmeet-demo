@@ -1,0 +1,5 @@
+/* FilmMeet shared branding — floating home link, matches landing theme (#0b0b0b / white) */
+.fm-home{position:fixed;top:18px;right:18px;z-index:200;display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 9px;background:rgba(10,10,10,.72);border:1px solid #333;border-radius:999px;color:#fff;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;line-height:1;text-decoration:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.fm-home img{display:block;width:22px;height:22px;border-radius:5px}
+.fm-home:hover{background:#000;border-color:#555}
+.fm-home:focus-visible{outline:2px solid #fff;outline-offset:3px}
