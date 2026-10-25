@@ -1,15 +1,18 @@
 /* FilmMeet shared branding — home link back to the landing page.
-   The demo is a fixed-viewport app (html/body height:100%, overflow:hidden)
-   with its own fixed header along the top, so this link must stay small
-   and out of the way — especially on phones, where it becomes icon-only. */
+   Desktop only. The demo is a fixed-viewport app with no free corner on
+   phones: at <=700px it switches to a phone layout whose own top bar
+   (status bar + app-topbar with a 76px right-hand column) and bottom
+   sheet/progress bar occupy every edge. Any overlay in the top-right
+   corner sits on top of the demo's own top-bar controls there — shrinking
+   the pill did not fix that, because the problem is the corner itself,
+   not the size. So on phones the link is hidden entirely; users return
+   with the browser back button, one tap to the landing page they came
+   from. On desktop (>700px) the demo's header row ends well short of
+   the right edge, so the pill is safe there. */
 .fm-home{position:fixed;top:18px;right:18px;z-index:200;display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 9px;background:rgba(10,10,10,.72);border:1px solid #333;border-radius:999px;color:#fff;font-family:Inter,Arial,Helvetica,sans-serif;font-size:13px;font-weight:500;line-height:1;text-decoration:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .fm-home img{display:block;width:22px;height:22px;border-radius:5px;flex:none}
 .fm-home:hover{background:#000;border-color:#555}
 .fm-home:focus-visible{outline:2px solid #fff;outline-offset:3px}
-/* Phones: icon-only circle, tucked into the notch-safe corner.
-   Was ~150x40px of top-row coverage; now 40x40px (~85% smaller). */
-@media (max-width:640px){
-  .fm-home{top:calc(10px + env(safe-area-inset-top, 0px));right:calc(10px + env(safe-area-inset-right, 0px));width:40px;height:40px;padding:0;justify-content:center;border-radius:50%}
-  .fm-home img{width:24px;height:24px}
-  .fm-home span{display:none}
+@media (max-width:700px){
+  .fm-home{display:none}
 }
